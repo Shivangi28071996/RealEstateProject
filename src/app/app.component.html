@@ -1,0 +1,162 @@
+<!-- <div class="wrapper">
+    <div class="sidebar" data-color="red" data-image="">
+        <app-sidebar></app-sidebar>
+        <div class="sidebar-background" style="background-image: url(/assets/img/sidebar-5.jpg)"></div>
+    </div>
+
+    <div class="main-panel">
+        <navbar-cmp></navbar-cmp>
+        <router-outlet></router-outlet>
+        <div *ngIf="isMap('maps')">
+            <footer-cmp></footer-cmp>
+        </div>
+    </div>
+</div> -->
+
+<!-- Main header start -->
+<header class="main-header">
+    <div class="container" id="userNavbar">
+        <nav class="navbar navbar-default" >
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navigation" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+
+                <a [routerLink]="['/Home']" class="logo">
+                    <img src="./assets/img/House-Lannister-Main-Shield.png" alt="logo">
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="navbar-collapse collapse" role="navigation" aria-expanded="true" id="app-navigation">
+
+                <ul class="nav navbar-nav navbar-right">
+
+                        <li>
+                                <a [routerLink]="['/Home']">
+                                    Home
+                                </a>
+                            </li>
+                        <li>
+                            <a [routerLink]="['/About']">
+                                About
+                            </a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/contact']">
+                                Contact Us
+                            </a>
+                        </li>
+
+                    <li>
+
+                        <a [routerLink]="['/Login']">
+                            LogIn
+                        </a>
+                    </li>
+                    <li>
+                        <a [routerLink]="['/Signup']">
+                            Register
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
+<div id="adminNavbar">
+        <nav class="navbar navbar-default" >
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navigation" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+    
+    
+                    <a [routerLink]="['/Home']" class="logo">
+                        <img src="./assets/img/House-Lannister-Main-Shield.png" alt="logo">
+                    </a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="navbar-collapse collapse" role="navigation" aria-expanded="true" id="app-navigation">
+    
+                    <ul class="nav navbar-nav navbar-right">
+    
+                            <li>
+                                    <a [routerLink]="['/table']">
+                                       User Detail
+                                    </a>
+                                </li>
+                            <li>
+                                <a [routerLink]="['/propertyDetail']">
+                                    Property Detail
+                                </a>
+                            </li>
+                        <li>
+                            <a [routerLink]="['/logout']">
+                               Log out
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+</div>
+
+<router-outlet></router-outlet>
+
+
+<div id="adminFooter">
+    <footer class="footer">
+        <div class="container-fluid">
+            <nav class="pull-left">
+                <ul>
+                    <li>
+                        <a href="#">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Company
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Portfolio
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Blog
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <p class="copyright pull-right">
+                &copy; {{test | date: 'yyyy'}} <a href="http://www.greatwits.com">Team Tiger</a>, made with love for a better web
+            </p>
+        </div>
+    </footer>
+</div>
+
+
+
+<!-- Main header end -->
+ <!-- <li>
+                            <a (click)="myAccount()">
+                                My Account
+                            </a>
+    
+                        </li> -->
+                    <!-- <li>                        
+                          <button value="My Account" (click)="myDashboard()"></button>
+                    </li> -->
+
+
+
+

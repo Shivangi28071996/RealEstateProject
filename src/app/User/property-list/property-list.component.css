@@ -1,0 +1,9 @@
+.thumbnail .caption {
+    padding: 9px;
+    color: #333;
+    width: 100%;
+}
+
+#image{
+    height: 250px;
+}

@@ -1,0 +1,140 @@
+ <div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <div class="inline">
+                        <h4 class="title">Customer Details</h4><br>
+                       
+                        <!-- <input class="form-control mr-sm-4" type="text" placeholder="Enter customer id" #id>
+                         <button type="button" (click) ="search(id.value)">Search</button> -->
+   
+                    </div>
+                    </div>
+                    <div> 
+                        <label>Filter by Username :</label>
+                        <input type="text" [(ngModel)]="filterText" class="form-control" placeholder="enter username">
+                    </div>
+                    <div class="content table-responsive table-full-width">
+                        <form #del>
+                          <table class="table table-hover table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Id</th><th>Fullname</th><th>Username</th><th>Phone</th><th>Email</th><th>stat</th><th>User Status</th><th>Edit</th><th>Activate/Deactivate</th>
+                                    </tr>
+                                </thead>
+                                <tbody >
+                                   <tr *ngFor="let row of Arr | filter: filterText">
+                                        <td>{{row?.id}}</td><td>{{row?.fullname}}</td><td>{{row?.username}}</td>
+                                        <td>{{row?.phone}}</td>
+                                        <td>{{row?.email}}</td><td>{{row?.stat}}</td><td>{{row?.userStatus}}</td>
+                                        
+                                        <td><button type="button" (click)="updateData(row?.id)" data-toggle="modal" data-target="#myModal">Update</button></td>
+                                        <td><button type="button" (click) ="delete(row?.id)" >Activate/Deactivate</button></td>
+                                    </tr>
+                                </tbody>
+                          </table>
+                        </form>
+
+                    </div>
+                </div>
+            </div> 
+            <hr>
+           
+            <!-- <form #sub="ngForm">
+  <input type="text" placeholder="fullname" name="fullname" ngModel><br>
+  <input type="text" placeholder="Username" name="username" ngModel><br>
+  <input type="password" placeholder="password" name="password" ngModel><br>
+  <input type="text" placeholder="Phone" name="phone" ngModel><br>
+  <input type="text" placeholder="Email" name="email" ngModel><br>
+  <input type="text" placeholder="stat" name="stat" ngModel><br>
+  <button type="button" (click)="Subme(sub.value)" >Add User</button>
+</form>  -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" 
+     aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <button type="button" class="close" 
+                   data-dismiss="modal">
+                       <span aria-hidden="true">&times;</span>
+                       <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    Modal title
+                </h4>
+            </div>
+            
+            <!-- Modal Body -->
+            <div class="modal-body">
+                
+                <form #updateForm="ngForm" >
+                
+                    <div class="form-group">
+                    <label >Fullname</label>
+                      <input type="text" name="fullname" class="form-control" [ngModel]="userData?.fullname" required>
+                  </div>
+                    <div class="form-group">
+                    <label >Username</label>
+                      <input type="text" name="username" class="form-control" [ngModel]="userData?.username" required>
+                  </div>
+                   <div class="form-group">
+                    <label >Email Address</label>
+                      <input type="email" name="email" class="form-control" [ngModel]="userData?.email" required>
+                  </div> <div class="form-group">
+                    <label >Password</label>
+                      <input type="password" name="password" class="form-control" [ngModel]="userData?.password" required>
+                  </div>
+                 <div class="form-group">
+                    <label >Phone</label>
+                      <input type="text" name="phone" class="form-control" [ngModel]="userData?.phone" required>
+                  </div>
+                <div class="form-group">
+                    <label >Status</label>
+                      <input type="text" name="stat" class="form-control" [ngModel]="userData?.stat" required>
+                  </div>
+                </form>                
+            </div>            
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"> Close </button>
+                <button type="button" class="btn btn-primary" (click)="updateUserData(updateForm.value)" data-dismiss="modal"> Save changes </button>
+            </div>
+        </div>
+    </div>
+</div>
+            <!-- <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Property Details</h4>
+                    </div>
+                    <div class="content table-responsive table-full-width">
+                          <table class="table table-hover table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Id</th><th>title</th><th>status</th><th>type</th><th>price</th>
+                                        <th>area</th><th>location</th><th>rooms</th><th>bathroom</th>
+                                        <th>garage</th><th>balcony</th><th>customer id</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                   <tr *ngFor="let row of Arr">
+                                        <td >{{row.propertyid}}</td><td >{{row.title}}</td>
+                                        <td >{{row.stat}}</td><td >{{row.type}}</td>
+                                        <td >{{row.price}}</td><td >{{row.area}}</td>
+                                        <td >{{row.location}}</td><td >{{row.rooms}}</td><td >{{row.bathroom}}</td>
+                                        <td >{{row.garage}}</td><td >{{row.balcony}}</td><td >{{row.userid}}</td>
+                                    </tr>
+                                </tbody>
+                          </table>
+
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+</div>
+ 

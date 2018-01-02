@@ -1,0 +1,59 @@
+
+    <div class="row">
+       
+    <form *ngFor="let details of list">
+            <!-- Recent properties box start -->
+            <div class="thumbnail recent-properties-box">
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                    <img src="../../assets/propertyImage/{{details.username}}/{{details.imageName}}.{{details.imageType}}" id="image" alt="{{details.imageName}}" align="right" class="img-responsive">
+                    </div>
+                    <!-- Detail -->
+                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                <div class="caption detail">
+                    <!-- Header -->
+                    <header>
+                        <div class="pull-left">
+                            <h3 class="title">
+                                    <a [routerLink]="['/propertyDetails']" (click)="displayProperty(details.propId)">{{details.title}}</a>
+                            </h3>
+                            <h2>{{property.propStatus}}</h2>
+                            <p>
+                                    {{property.location}}
+      
+                            </p>
+                        </div>
+                        
+                        <!-- Price -->
+                        <div class="price">
+                            <button class="btn btn-danger" (click)="check()">Contact Details</button>
+                        </div>
+                    </header>
+                    <!-- Location -->
+                    <h3 class="location">
+                            <i class="fa fa-map-marker"></i>{{details.address}}
+                    </h3>
+                    <!-- Facilities List -->
+                    <ul class="facilities-list clearfix">
+                        <li class="bordered-right">
+                            <i class="flaticon-square-layouting-with-black-square-in-east-area"></i>
+                            <span>{{details.area}}</span>
+                        </li>
+                        <li>
+                            <i class="flaticon-bed"></i>
+                            <span>{{details.rooms}}</span>
+                        </li>
+                        <li>
+                            <i class="flaticon-holidays"></i>
+                            <span> {{details.bathroom}} </span>
+                        </li>
+                    </ul>
+                    <!-- Footer -->
+                    <div class="footer">
+                            <i class="fa fa-user"></i> {{details.name}}
+                    </div>
+                </div>
+                </div>
+                
+            </div>
+        </form>
+    </div>
